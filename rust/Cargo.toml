@@ -1,0 +1,18 @@
+[package]
+name = "rust_lib_hd_wallet"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+flutter_rust_bridge = "=2.13.0"
+getrandom = { version = "0.2", features = ["std"] }
+sha2 = "0.10"
+pbkdf2 = "0.12"
+unicode-normalization = "0.1"
+bitcoin = "0.32"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }
